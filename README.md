@@ -4,6 +4,8 @@
 
 If you don't have the Bitcoin Core software installed on your computer, you can install it [here](https://bitcoin.org/en/download).
 
+Remember to add bitcoind and bitcoin-cli to your path. If you don't know how, raise your hand.
+
 ### Run 3 Regtest Nodes
 
 This script runs 3 regtest nodes
@@ -12,6 +14,10 @@ This script runs 3 regtest nodes
 
 
 ### Command Sequence
+
+##### Balances
+
+(as regtest)
 
 Just the three of us?
 
@@ -47,6 +53,15 @@ Are we rich yet?
 
 Yes, we are rich!
 
+##### Transactions
+
+We ran 3 nodes. The default regtest node now has 50 bitcoins, but Alice and Bob are still broke. In fact, they don't even have bitcoin addresses yet.
+
+To run bitcoin-cli commands _as alice_, you can `source aliases.sh`, which will create `alice-cli` and `bob-cli` terminal aliases that run `bitcoin-cli` commands with the correct parameters for Bob and Alice.
+
+`alice-cli getbalance`
+
+FIXME: finish
 
 ### Install btc-debug
 
