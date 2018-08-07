@@ -9,8 +9,8 @@ If you don't have the Bitcoin Core software installed on your computer, you can 
 In 3 separate terminal windows
 
 * `bitcoind -regtest`
-* `bash alice/run-node.sh`
-* `bash bob/run-node.sh`
+* `bash alice/run.sh`
+* `bash bob/run.sh`
 
 
 ### Install btc-debug
