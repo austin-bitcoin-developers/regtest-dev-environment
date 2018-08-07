@@ -72,11 +72,17 @@ This project is a little easier to use than `bitcoin-cli`. If you'd like, instal
 * Follow the README.md
 
 Run 3 windows
-* npm start -- -port=9332
+* npm start -- -port=18443
 * npm start -- -port=9333
 * npm start -- -port=9334
 
 FIXME:
-* npm start -- -port=9332
-* npm start -- -port=9333 -name=alice
-* npm start -- -port=9334 -name=bob
+* npm start -- -port=18443
+* npm start -- -port=9333 -title=alice
+* npm start -- -port=9334 -title=bob
+
+### Optionally using bitcoin-qt
+
+Assuming bitcoin-qt is in your path and you are in the project directory with no instances running
+
+`./qt.sh`
