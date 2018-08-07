@@ -6,12 +6,9 @@ If you don't have the Bitcoin Core software installed on your computer, you can 
 
 ### Run 3 Regtest Nodes
 
-In 3 separate terminal windows
+This script runs 3 regtest nodes
 
-* `bitcoind -regtest`
-* `bash alice/run.sh`
-* `bash bob/run.sh`
-
+`bash run.sh`
 
 ### Install btc-debug
 
