@@ -1,5 +1,11 @@
 # Bitcoin Regtest Environment
 
+### Introduction
+
+The goal of this presentation is to set up a development environment, where you can run multiple nodes
+in a simulated environment without having to sync to testnet.  We will set up 3 nodes and experiment
+with the cli/rpc commands to send transactions between nodes and analyze the makeup of a transaction.
+
 ### Install Bitcoin Core
 
 If you don't have the Bitcoin Core software installed on your computer, you can install it [here](https://bitcoin.org/en/download).
@@ -17,7 +23,7 @@ This script runs 3 regtest nodes
 
 ##### Balances
 
-(as regtest)
+(as regtest, preceed following commands with `bitcoin-cli -regtest`)
 
 Just the three of us?
 
@@ -61,28 +67,46 @@ To run bitcoin-cli commands _as alice_, you can `source aliases.sh`, which will 
 
 `alice-cli getbalance`
 
-FIXME: finish
+Alice is broke as expected
 
-### Install btc-debug
+`alice-cli getnewaddress`
+
+Let's send Alice some coin
+
+`bitcoin-cli -regtest sendtoaddress [alice's address from above] 1`
+
+`alice-cli getbalance`
+
+Alice is still broke
+
+`alice-cli listunspent 0` 
+
+The 0 is for minimum confirmations, now we se Alice's transaction as unconfirmed, it will show in her balance once a block is mined.
+
+### Install nodes-debug(optional)
 
 This project is a little easier to use than `bitcoin-cli`. If you'd like, install it:
 
-`git clone https://github.com/rsbondi/btc-debug`
+`git clone https://github.com/rsbondi/nodes-debug.git`
 
-* Follow the README.md
+##### Run the app
 
-Run 3 windows
-* npm start -- -port=18443
-* npm start -- -port=9333
-* npm start -- -port=9334
+`cd nodes-debug`
 
-FIXME:
-* npm start -- -port=18443
-* npm start -- -port=9333 -title=alice
-* npm start -- -port=9334 -title=bob
+`npm run dev`
+
+or follow the readme to build and run the binary
 
 ### Optionally using bitcoin-qt
 
 Assuming bitcoin-qt is in your path and you are in the project directory with no instances running
 
 `./qt.sh`
+
+### Optionally simulate
+
+`node simulate.js` will randomly create transaction and mine on default regtest node.  This will give more of a real world feel with mempool transactions and blocks getting automatically mined.  Be sure that before running you mine enough on the default node with the `generate` command so it will have money to spend
+
+### Exercise
+
+simulate chain split, kill all nodes, delete one of your regtest directories, start that node, mine some, then start other nodes
