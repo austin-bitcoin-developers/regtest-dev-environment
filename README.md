@@ -81,7 +81,19 @@ Alice is still broke
 
 `alice-cli listunspent 0` 
 
-The 0 is for minimum confirmations, now we se Alice's transaction as unconfirmed, it will show in her balance once a block is mined.
+The 0 is for minimum confirmations, now we see Alice's transaction as unconfirmed, it will show in her balance once a block is mined.
+
+Exercise: send a transaction from Alice to Bob and verify that Bob has received
+
+### Additional Topics
+
+makeup of a transaction
+
+run `simulate.js` and show how it is useful
+
+create, sign and send raw transactions
+
+create, sign and send multisig transaction
 
 ### Install nodes-debug(optional)
 
@@ -106,7 +118,3 @@ Assuming bitcoin-qt is in your path and you are in the project directory with no
 ### Optionally simulate
 
 `node simulate.js` will randomly create transaction and mine on default regtest node.  This will give more of a real world feel with mempool transactions and blocks getting automatically mined.  Be sure that before running you mine enough on the default node with the `generate` command so it will have money to spend
-
-### Exercise
-
-simulate chain split, kill all nodes, delete one of your regtest directories, start that node, mine some, then start other nodes

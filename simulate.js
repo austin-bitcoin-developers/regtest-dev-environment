@@ -17,8 +17,6 @@ config.split('\n').forEach(line => {
   if (rpcpass) password = rpcpass[1]
 })
 
-const fee = args.fee && parseFloat(args.fee) || 0.0002
-
 port = args.port || '18443'
 host = args.host || '127.0.0.1'
 
