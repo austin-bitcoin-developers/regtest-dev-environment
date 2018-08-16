@@ -118,3 +118,11 @@ Assuming bitcoin-qt is in your path and you are in the project directory with no
 ### Optionally simulate
 
 `node simulate.js` will randomly create transaction and mine on default regtest node.  This will give more of a real world feel with mempool transactions and blocks getting automatically mined.  Be sure that before running you mine enough on the default node with the `generate` command so it will have money to spend
+
+### Additional resources
+
+[Learning-Bitcoin-from-the-Command-Line](https://github.com/ChristopherA/Learning-Bitcoin-from-the-Command-Line)
+This is a good hardcore deep dive into the CLI
+
+[A Map of the Bitcoin Core RPC API across Versions](https://masonicboom.github.io/btcrpcapi/)
+A nice tabular view of all the RPC commands and the history of changes, showing deprecation, removal and addition of commands per version.
