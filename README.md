@@ -1,5 +1,7 @@
 # Bitcoin Regtest Environment
 
+Video of presentation can be found [here](https://www.youtube.com/watch?v=sbupEpL6-J4&feature=youtu.be)
+
 ### Introduction
 
 The goal of this presentation is to set up a development environment, where you can run multiple nodes
