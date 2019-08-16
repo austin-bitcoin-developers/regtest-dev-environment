@@ -2,6 +2,8 @@
 
 Video of presentation can be found [here](https://www.youtube.com/watch?v=sbupEpL6-J4&feature=youtu.be)
 
+Transcript of presentation can be found [here](http://diyhpl.us/wiki/transcripts/austin-bitcoin-developers/2018-08-17-richard-bondi-bitcoin-cli-regtest/)
+
 ### Introduction
 
 The goal of this presentation is to set up a development environment, where you can run multiple nodes
