@@ -1,6 +1,10 @@
 # Bitcoin Regtest Environment
 
-Video of presentation can be found [here](https://www.youtube.com/watch?v=sbupEpL6-J4&feature=youtu.be)
+Video of presentation can be found [here](https://www.youtube.com/watch?v=sbupEpL6-J4&feature=youtu.be).
+
+Transcript of presentation can be found [here](http://diyhpl.us/wiki/transcripts/austin-bitcoin-developers/2018-08-17-richard-bondi-bitcoin-cli-regtest/).
+
+For more discussion of regtest and how it compares to the proposed signet see [here](http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-signet/) and [here](https://bitcoin.stackexchange.com/questions/89640/what-are-the-key-differences-between-regtest-and-the-proposed-signet).
 
 ### Introduction
 
