@@ -77,21 +77,21 @@ We ran 3 nodes. The default regtest node now has 50 bitcoins, but Alice and Bob 
 
 To run bitcoin-cli commands _as alice_, you can `source aliases.sh`, which will create `alice-cli` and `bob-cli` terminal aliases that run `bitcoin-cli` commands with the correct parameters for Bob and Alice.
 
-`alice-cli -regtest getbalance`
+`alice-cli getbalance`
 
 Alice is broke as expected
 
-`alice-cli -regtest getnewaddress`
+`alice-cli getnewaddress`
 
 Let's send Alice some coin
 
 `bitcoin-cli -regtest sendtoaddress  <alice's address from above> 1`
 
-`alice-cli -regtest getbalance`
+`alice-cli getbalance`
 
 Alice is still broke
 
-`alice-cli -regtest listunspent 0` 
+`alice-cli listunspent 0` 
 
 The 0 is for minimum confirmations, now we see Alice's transaction as unconfirmed, it will show in her balance once a block is mined.
 
