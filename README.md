@@ -4,6 +4,8 @@ Video of presentation can be found [here](https://www.youtube.com/watch?v=sbupEp
 
 Transcript of presentation can be found [here](http://diyhpl.us/wiki/transcripts/austin-bitcoin-developers/2018-08-17-richard-bondi-bitcoin-cli-regtest/).
 
+Note: instead of 'generate', use 'generatetoaddress'
+
 For more discussion of regtest and how it compares to the proposed signet see [here](http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-signet/) and [here](https://bitcoin.stackexchange.com/questions/89640/what-are-the-key-differences-between-regtest-and-the-proposed-signet).
 
 ### Introduction
@@ -45,9 +47,13 @@ Have there been any blocks mined? Without blocks we're all broke!
 
 `getblockchaininfo`
 
+First, we need to grab an address from someone to mine to:
+
+`getnewaddress`
+
 Notice that the height is 0. This means we need to mine some blocks. In regtest we can mine without POW:
 
-`generate 1`
+`generatetoaddress 1 <address generated above>`
 
 Now we're rich -- 50 bitcoins!
 
@@ -55,9 +61,9 @@ Now we're rich -- 50 bitcoins!
 
 Still 0. What happened? In bitcoin we have a 100 block maturity time for newly mined coinbase transactions ([explanation](https://en.bitcoin.it/wiki/Block_chain)
 
-Let's mine 100 more -- giving us 1 mature transaction
+Let's mine 100 more (to any address in our network) -- giving us 1 mature transaction
 
-`generate 100`
+`generatetoaddress 100 <address>`
 
 Are we rich yet?
 
@@ -71,21 +77,21 @@ We ran 3 nodes. The default regtest node now has 50 bitcoins, but Alice and Bob 
 
 To run bitcoin-cli commands _as alice_, you can `source aliases.sh`, which will create `alice-cli` and `bob-cli` terminal aliases that run `bitcoin-cli` commands with the correct parameters for Bob and Alice.
 
-`alice-cli getbalance`
+`alice-cli -regtest getbalance`
 
 Alice is broke as expected
 
-`alice-cli getnewaddress`
+`alice-cli -regtest getnewaddress`
 
 Let's send Alice some coin
 
-`bitcoin-cli -regtest sendtoaddress [alice's address from above] 1`
+`bitcoin-cli -regtest sendtoaddress  <alice's address from above> 1`
 
-`alice-cli getbalance`
+`alice-cli -regtest getbalance`
 
 Alice is still broke
 
-`alice-cli listunspent 0` 
+`alice-cli -regtest listunspent 0` 
 
 The 0 is for minimum confirmations, now we see Alice's transaction as unconfirmed, it will show in her balance once a block is mined.
 
