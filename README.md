@@ -4,6 +4,8 @@ Video of presentation can be found [here](https://www.youtube.com/watch?v=sbupEp
 
 Transcript of presentation can be found [here](http://diyhpl.us/wiki/transcripts/austin-bitcoin-developers/2018-08-17-richard-bondi-bitcoin-cli-regtest/).
 
+Note: instead of 'generate', use 'generatetoaddress'
+
 For more discussion of regtest and how it compares to the proposed signet see [here](http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-signet/) and [here](https://bitcoin.stackexchange.com/questions/89640/what-are-the-key-differences-between-regtest-and-the-proposed-signet).
 
 ### Introduction
@@ -45,9 +47,13 @@ Have there been any blocks mined? Without blocks we're all broke!
 
 `getblockchaininfo`
 
+First, we need to grab an address from someone to mine to:
+
+`getnewaddress`
+
 Notice that the height is 0. This means we need to mine some blocks. In regtest we can mine without POW:
 
-`generate 1`
+`generatetoaddress 1 <address generated above>`
 
 Now we're rich -- 50 bitcoins!
 
@@ -55,9 +61,9 @@ Now we're rich -- 50 bitcoins!
 
 Still 0. What happened? In bitcoin we have a 100 block maturity time for newly mined coinbase transactions ([explanation](https://en.bitcoin.it/wiki/Block_chain)
 
-Let's mine 100 more -- giving us 1 mature transaction
+Let's mine 100 more (to any address in our network) -- giving us 1 mature transaction
 
-`generate 100`
+`generatetoaddress 100 <address>`
 
 Are we rich yet?
 
@@ -79,7 +85,7 @@ Alice is broke as expected
 
 Let's send Alice some coin
 
-`bitcoin-cli -regtest sendtoaddress [alice's address from above] 1`
+`bitcoin-cli -regtest sendtoaddress  <alice's address from above> 1`
 
 `alice-cli getbalance`
 
